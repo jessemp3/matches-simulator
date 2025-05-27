@@ -1,9 +1,9 @@
-package com.sporthela.mathes_simulator
+package com.sporthela.matches_simulator
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import com.sporthela.mathes_simulator.databinding.ActivityMainBinding
+import com.sporthela.matches_simulator.databinding.ActivityMainBinding
 
 class MainActivityKotlin : AppCompatActivity() {
 

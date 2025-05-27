@@ -1,4 +1,4 @@
-package com.sporthela.mathes_simulator
+package com.sporthela.matches_simulator
 
 import org.junit.Test
 

@@ -10,6 +10,10 @@ pluginManagement {
         mavenCentral()
         gradlePluginPortal()
     }
+    plugins{
+        id("com.android.application")
+        id("org.jetbrains.kotlin.android")
+    }
 }
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
@@ -19,5 +23,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "mathes_simulator"
+rootProject.name = "matches_simulator"
 include(":app")

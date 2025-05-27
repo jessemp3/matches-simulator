@@ -10,10 +10,10 @@
         android:label="Matches Simulator"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Mathes_simulator"
+        android:theme="@style/Theme.Simulator"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name="com.sporthela.matches_simulator.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

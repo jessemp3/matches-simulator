@@ -4,13 +4,14 @@ plugins {
 }
 
 android {
-    namespace = "com.sporthela.mathes_simulator"
-    compileSdk = 34
+    namespace = "com.sporthela.matches_simulator"
+    compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.sporthela.mathes_simulator"
+        applicationId = "com.sporthela.matches_simulator"
         minSdk = 30
-        targetSdk = 34
+        //noinspection OldTargetApi
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -44,7 +45,6 @@ dependencies {
 //    implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.swiperefreshlayout)
     implementation(libs.androidx.material3)
-    implementation("androidx.compose.material3:material3-window-size-class:1.3.2")
     implementation(libs.androidx.material3.adaptive.navigation.suite)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
