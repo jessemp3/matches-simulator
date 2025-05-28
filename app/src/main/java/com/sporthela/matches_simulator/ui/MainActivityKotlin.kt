@@ -1,4 +1,4 @@
-package com.sporthela.matches_simulator
+package com.sporthela.matches_simulator.ui
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge

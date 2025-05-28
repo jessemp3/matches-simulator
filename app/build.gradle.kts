@@ -43,6 +43,14 @@ android {
 dependencies {
 
 //    implementation(libs.androidx.core.ktx)
+    //retrofit https://square.github.io/retrofit/download/
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+
+    // Glide (Image Loading): https://github.com/bumptech/glide
+    implementation ("com.github.bumptech.glide:glide:4.11.0")
+    annotationProcessor ("com.github.bumptech.glide:compiler:4.11.0")
+
     implementation(libs.androidx.swiperefreshlayout)
     implementation(libs.androidx.material3)
     implementation(libs.androidx.material3.adaptive.navigation.suite)
