@@ -1,5 +1,7 @@
 package com.sporthela.matches_simulator.ui;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -53,19 +55,30 @@ public class MainActivity extends AppCompatActivity {
     }//configs do retrofit
 
     private void setupFloatingActionButton() {
-//        todo: criar evento de click e simulação de partida
+        binding.fabSimulate.setOnClickListener(view -> {
+            view.animate().rotationBy(360).setDuration(500).setListener(new AnimatorListenerAdapter() {
+                @Override
+                public void onAnimationEnd(Animator animation) {
+                    super.onAnimationEnd(animation);
+                    //todo: implementar o algoritmo de simulação de partidas
+                }
+            });
+        });
     }
 
     private void setupMatchesRefresh() {
-//       todo: atualizar as partidas na ação do swipe
+        binding.srlMatches.setOnRefreshListener(this::findMatchesFromApi);
     }
 
     private void setupMatchesList() {
         binding.rvMatches.setHasFixedSize(true);
         binding.rvMatches.setLayoutManager(new LinearLayoutManager(this));
+        findMatchesFromApi();
+    }
 
-
-        //doing: listar as partidas , consumindo nossa api;
+    //doing: listar as partidas , consumindo nossa api;
+    private void findMatchesFromApi() {
+        binding.srlMatches.setRefreshing(true);
         matchesApi.getMatches().enqueue(new Callback<List<Match>>() {
             @Override
             public void onResponse(Call<List<Match>> call, Response<List<Match>> response) {
@@ -78,14 +91,16 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     showErrorMessage();
                 }
+                binding.srlMatches.setRefreshing(false);
             }
 
             @Override
             public void onFailure(Call<List<Match>> call, Throwable t) {
                 showErrorMessage();
+                binding.srlMatches.setRefreshing(false);
             }
         });
-    }
+    };
 
     private void showErrorMessage() {
         Snackbar.make(binding.fabSimulate, R.string.error_api, Snackbar.LENGTH_LONG).show();
