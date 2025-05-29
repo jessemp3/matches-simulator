@@ -18,6 +18,7 @@ import com.sporthela.matches_simulator.domain.Match;
 import com.sporthela.matches_simulator.ui.adapter.MatchesAdapter;
 
 import java.util.List;
+import java.util.Random;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -29,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
     private MatchesApi matchesApi;
-    private RecyclerView.Adapter matchesAdapter;
+    private MatchesAdapter matchesAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +61,40 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onAnimationEnd(Animator animation) {
                     super.onAnimationEnd(animation);
-                    //todo: implementar o algoritmo de simulação de partidas
+
+                    if (matchesAdapter != null && matchesAdapter.getMatches() != null) {
+                        Random random = new Random();
+                        List<Match> matches = matchesAdapter.getMatches();
+
+                        // Log para debug
+//                        Log.d("MainActivity", "Simulando " + matches.size() + " partidas");
+
+                        // Percorre TODAS as partidas e sorteia os placares
+                        for (int i = 0; i < matches.size(); i++) {
+                            Match match = matches.get(i);
+
+                            // Gera placar aleatório entre 0 e 5 para cada time
+                            int homeScore = random.nextInt(6);
+                            int awayScore = random.nextInt(6);
+
+                            match.getHomeTeam().setScore(homeScore);
+                            match.getAwayTeam().setScore(awayScore);
+
+                            // Log para debug
+//                            Log.d("MainActivity", "Partida " + i + ": " +
+//                                    match.getHomeTeam().getName() + " " + homeScore +
+//                                    " x " + awayScore + " " + match.getAwayTeam().getName());
+//                        }
+
+                            // MUITO IMPORTANTE: Notifica que TODOS os dados mudaram
+                            matchesAdapter.notifyDataSetChanged();
+
+                            // Mostra mensagem de sucesso
+                            Snackbar.make(binding.fabSimulate, "Partidas simuladas com sucesso!", Snackbar.LENGTH_SHORT).show();
+                        }
+                    } else {
+                        Log.e("MainActivity", "Adapter ou lista de partidas é null");
+                    }
                 }
             });
         });
@@ -100,7 +134,9 @@ public class MainActivity extends AppCompatActivity {
                 binding.srlMatches.setRefreshing(false);
             }
         });
-    };
+    }
+
+    ;
 
     private void showErrorMessage() {
         Snackbar.make(binding.fabSimulate, R.string.error_api, Snackbar.LENGTH_LONG).show();

@@ -80,7 +80,7 @@
             tools:text="away team" />
 
         <TextView
-            android:id="@+id/tvAwayScore"
+            android:id="@+id/tvAwayTeamScore"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"

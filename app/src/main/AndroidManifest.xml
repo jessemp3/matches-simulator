@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-<!--    habilitando o acesso do app a internert-->
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <!--    habilitando o acesso do app a internert-->
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -28,7 +28,7 @@
         <activity
             android:name=".ui.DetailActivity"
             android:exported="true"
-            android:theme="@style/Theme.Simulator.NoActionBar">
-        </activity>
+            android:parentActivityName=".ui.MainActivity"
+            android:theme="@style/Theme.Simulator.NoActionBar"/>
     </application>
 </manifest>
