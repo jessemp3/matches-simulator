@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.sporthela.matches_simulator" />
+                  <option name="mobileSdkAppId" value="1:989277952629:android:754abac69eaf974216f63c" />
+                  <option name="projectId" value="matches-simulator-5148a" />
+                  <option name="projectNumber" value="989277952629" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

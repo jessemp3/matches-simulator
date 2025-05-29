@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "989277952629",
+    "project_id": "matches-simulator-5148a",
+    "storage_bucket": "matches-simulator-5148a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:989277952629:android:754abac69eaf974216f63c",
+        "android_client_info": {
+          "package_name": "com.sporthela.matches_simulator"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgbq6ip0b1IN67xVlNTfQjgI8w07Oe_vw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

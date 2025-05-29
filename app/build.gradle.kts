@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     id("kotlin-parcelize".toString())
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -52,6 +53,11 @@ dependencies {
     // Glide (Image Loading): https://github.com/bumptech/glide
     implementation("com.github.bumptech.glide:glide:4.11.0")
     annotationProcessor("com.github.bumptech.glide:compiler:4.11.0")
+
+    //google firebase
+    implementation(platform("com.google.firebase:firebase-bom:33.14.0"))
+    implementation("com.google.firebase:firebase-analytics")
+
 
     implementation(libs.androidx.swiperefreshlayout)
     implementation(libs.androidx.material3)
