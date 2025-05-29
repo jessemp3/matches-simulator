@@ -5,6 +5,10 @@ import android.animation.AnimatorListenerAdapter;
 import android.os.Bundle;
 import android.util.Log;
 
+import android.widget.Button;
+import android.view.View;
+import android.view.ViewGroup;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -29,11 +33,24 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+import com.google.firebase.crashlytics.FirebaseCrashlytics;
+
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
     private MatchesApi matchesApi;
     private MatchesAdapter matchesAdapter = new MatchesAdapter(Collections.emptyList());
+
+    //botão de falha no firebase(Crashlytics)
+
+//    private void setupCrashButton() {
+//        binding.crashButton.setOnClickListener(view -> {
+//            FirebaseCrashlytics.getInstance().log("User triggered test crash");
+//            FirebaseCrashlytics.getInstance().setCustomKey("test_crash", true);
+//            throw new RuntimeException("teste de crash inesperado");
+//        });
+//    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
         setupMatchesList();
         setupMatchesRefresh();
         setupFloatingActionButton();
+//        setupCrashButton();
     }
 
     private void setUpHttpCliente() {
@@ -148,6 +166,9 @@ public class MainActivity extends AppCompatActivity {
     private void showErrorMessage() {
         Snackbar.make(binding.fabSimulate, R.string.error_api, Snackbar.LENGTH_LONG).show();
     }
+
 }
+
+
 
 

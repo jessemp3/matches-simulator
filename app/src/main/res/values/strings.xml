@@ -5,4 +5,5 @@
     <string name="cd_away_team">imagem time visitante</string>
     <string name="cd_versus">x</string>
     <string name="error_api">Unexpected error</string>
+    <string name="test_crash">🚨</string>
 </resources>

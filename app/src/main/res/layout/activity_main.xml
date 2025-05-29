@@ -29,5 +29,14 @@
         android:contentDescription="@string/cd_simulate"
         app:srcCompat="@drawable/ic_simulate" />
 
+<!--    botão de test de Crashlytics-->
+<!--    <Button-->
+<!--        android:id="@+id/crash_button"-->
+<!--        android:layout_width="50dp"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:text="@string/test_crash"-->
+<!--        android:layout_gravity="bottom"-->
+<!--        android:layout_margin="@dimen/margin_default" />-->
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

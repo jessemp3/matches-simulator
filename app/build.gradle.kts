@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     id("kotlin-parcelize".toString())
     id("com.google.gms.google-services")
+    id("com.google.firebase.crashlytics")
 }
 
 android {
@@ -52,6 +53,7 @@ dependencies {
 
     // Glide (Image Loading): https://github.com/bumptech/glide
     implementation("com.github.bumptech.glide:glide:4.11.0")
+    implementation(libs.firebase.crashlytics)
     annotationProcessor("com.github.bumptech.glide:compiler:4.11.0")
 
     //google firebase
